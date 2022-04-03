@@ -30,7 +30,7 @@ namespace ProductStock
             services.AddControllers();
             services.AddSwaggerGen();
 
-            services.AddDbContext<CategoryContext>(
+            services.AddDbContext<ProductStockContext>(
                 opts => opts.UseMySQL(Configuration.GetConnectionString("DbConnection")
             ));
         }
