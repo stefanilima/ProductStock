@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ProductStock.Data;
 
 namespace ProductStock
 {
@@ -29,8 +30,8 @@ namespace ProductStock
             services.AddControllers();
             services.AddSwaggerGen();
 
-            services.AddDbContext<DbContext>(opts => opts.UseMySQL(
-                Configuration.GetConnectionString("DbConnection")
+            services.AddDbContext<ProductStockContext>(
+                opts => opts.UseMySQL(Configuration.GetConnectionString("DbConnection")
             ));
         }
 
