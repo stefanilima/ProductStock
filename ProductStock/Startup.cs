@@ -33,6 +33,7 @@ namespace ProductStock
             services.AddDbContext<ProductStockContext>(
                 opts => opts.UseMySQL(Configuration.GetConnectionString("DbConnection")
             ));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
