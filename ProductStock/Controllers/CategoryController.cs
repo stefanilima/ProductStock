@@ -28,8 +28,8 @@ namespace ProductStock.Controllers
             return Ok(_context.Categorys);
         }
 
-        [HttpPost("{id}")]
-        public IActionResult getCategoryById(int id)
+        [HttpGet("{id}")]
+        public IActionResult GetCategoryById(int id)
         {
             Category category = _context.Categorys.FirstOrDefault(category => category.Id == id);
 
@@ -49,13 +49,12 @@ namespace ProductStock.Controllers
             _context.Categorys.Add(category);
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(getCategoryById), new { Id = category.Id }, category );
+            return CreatedAtAction(nameof(GetCategoryById), new { Id = category.Id }, category );
         }
 
         [HttpPut("{id}")]
         public IActionResult UpdateCategory(int id, [FromBody] CategoryDto categoryDto)
         {
-
             Category category = _context.Categorys.FirstOrDefault(category => category.Id == id);
 
             if(category == null)
