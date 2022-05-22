@@ -1,5 +1,4 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using ProductStock.Data.Dtos;
 using ProductStock.Models;
 
