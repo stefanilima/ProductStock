@@ -1,13 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ProductStock.Models
+namespace ProductStock.Data.Dtos
 {
-    public class OrderProduct
+    public class OrderProductDto
     {
-        [Key]
-        [Required]
-        public int Id { get; set; }
-
         [Required]
         public int IdOrder { get; set; }
 
