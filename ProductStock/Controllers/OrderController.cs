@@ -21,7 +21,7 @@ namespace ProductStock.Controllers
         }
 
         [HttpGet]
-        public IActionResult Getorder()
+        public IActionResult GetOrder()
         {
             return Ok(_context.Orders);
         }

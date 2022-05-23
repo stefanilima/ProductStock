@@ -4,11 +4,11 @@ using ProductStock.Models;
 
 namespace ProductStock.Profiles
 {
-    public class OrderProfile : Profile
+    public class PaymentTypeProfile : Profile
     {
-        public OrderProfile()
+        public PaymentTypeProfile()
         {
-            CreateMap<OrderDto, Order>();
+            CreateMap<PaymentTypeDto, PaymentType>();
         }
     }
 }
