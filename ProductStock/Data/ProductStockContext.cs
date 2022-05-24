@@ -10,6 +10,14 @@ namespace ProductStock.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Address>()
+                .HasOne(address => address.Client)
+                .WithOne(client => client.Address)
+                .HasForeignKey<Client>(client => client.IdAddress);
+        }
+
         public DbSet<Category> Categorys { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Client> Clients { get; set; }
