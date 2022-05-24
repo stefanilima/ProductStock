@@ -20,6 +20,8 @@ namespace ProductStock.Models
         [StringLength(100, ErrorMessage = "Email must contain a maximum of 100 characters")]
         public string Email { get; set; }
 
+        public Address Address { get; set; }
+
         public int IdAddress { get; set; }
     }
 }
