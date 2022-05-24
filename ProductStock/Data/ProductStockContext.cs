@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ProductStock.Models;
 
 namespace ProductStock.Data
@@ -24,5 +23,6 @@ namespace ProductStock.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
         public DbSet<PaymentType> PaymentType { get; set; }
+        public DbSet<Address> Address { get; set; }
     }
 }
