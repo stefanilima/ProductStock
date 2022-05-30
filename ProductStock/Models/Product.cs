@@ -22,6 +22,8 @@ namespace ProductStock.Models
         [StringLength(10, ErrorMessage = "Price must contain a maximum of 10 characters")]
         public float Price { get; set; }
 
+        public virtual Category Category { get; set; }
+
         [Required(ErrorMessage = "IdCategory is required")]
         public int IdCategory { get; set; }
     }

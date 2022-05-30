@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ProductStock.Models
 {
@@ -14,5 +16,8 @@ namespace ProductStock.Models
         public string Name { get; set; }
 
         public DateTime CreatedAt { get; set; }
+
+        [JsonIgnore]
+        public virtual List<Product> Products { get; set; }
     }
 }
