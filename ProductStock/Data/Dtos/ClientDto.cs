@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using ProductStock.Models;
 
 namespace ProductStock.Data.Dtos
 {
@@ -15,5 +16,9 @@ namespace ProductStock.Data.Dtos
         [Required(ErrorMessage = "Email is required")]
         [StringLength(100, ErrorMessage = "Email must contain a maximum of 100 characters")]
         public string Email { get; set; }
+
+        public int IdAddress { get; set; }
+
+        public Address Address { get; set; }
     }
 }
