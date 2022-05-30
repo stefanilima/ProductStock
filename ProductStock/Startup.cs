@@ -31,7 +31,7 @@ namespace ProductStock
             services.AddSwaggerGen();
 
             services.AddDbContext<ProductStockContext>(
-                opts => opts.UseMySQL(Configuration.GetConnectionString("DbConnection")
+                opts => opts.UseLazyLoadingProxies().UseMySQL(Configuration.GetConnectionString("DbConnection")
             ));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }

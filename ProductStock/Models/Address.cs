@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ProductStock.Models
 {
@@ -19,6 +20,7 @@ namespace ProductStock.Models
         [Required(ErrorMessage = "Number is required")]
         public int Number { get; set; }
 
-        public Client Client { get; set; }
+        [JsonIgnore]
+        public virtual Client Client { get; set; }
     }
 }
