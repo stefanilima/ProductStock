@@ -15,6 +15,11 @@ namespace ProductStock.Data
                 .HasOne(address => address.Client)
                 .WithOne(client => client.Address)
                 .HasForeignKey<Client>(client => client.IdAddress);
+
+            builder.Entity<Product>()
+                .HasOne(product => product.Category)
+                .WithMany(category => category.Products)
+                .HasForeignKey(product => product.IdCategory);
         }
 
         public DbSet<Category> Categorys { get; set; }

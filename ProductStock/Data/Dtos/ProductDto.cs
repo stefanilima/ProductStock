@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+using ProductStock.Models;
 
 namespace ProductStock.Data.Dtos
 {
@@ -16,6 +18,10 @@ namespace ProductStock.Data.Dtos
         [Required(ErrorMessage = "Price is required")]
         public float Price { get; set; }
 
+        [JsonIgnore]
+        public Category Category { get; set; }
+
+        [JsonIgnore]
         [Required(ErrorMessage = "IdCategory is required")]
         public int IdCategory { get; set; }
     }
