@@ -21,7 +21,6 @@ namespace ProductStock.Data.Dtos
         [JsonIgnore]
         public Category Category { get; set; }
 
-        [JsonIgnore]
         [Required(ErrorMessage = "IdCategory is required")]
         public int IdCategory { get; set; }
     }
