@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using ProductStock.Data;
@@ -21,9 +22,24 @@ namespace ProductStock.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetProduct()
+        public IActionResult GetProduct([FromQuery] int? quantity = null)
         {
-            return Ok(_context.Products);
+            List<Product> products;
+
+            if (quantity == null)
+            {
+                products = _context.Products.ToList();
+            } else
+            {
+                products = _context.Products.Where(product => product.Quantity <= quantity).ToList();
+            }
+
+            if(products != null)
+            {
+                return Ok(products);
+            }
+
+            return NotFound();
         }
 
         [HttpGet("{id}")]
