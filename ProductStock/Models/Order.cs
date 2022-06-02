@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProductStock.Models
@@ -23,5 +24,7 @@ namespace ProductStock.Models
 
         [Required(ErrorMessage = "Amount is required")]
         public float Amount { get; set; }
+
+        public virtual List<OrderProduct> OrderProducts { get; set; }
     }
 }

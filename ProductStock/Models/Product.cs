@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProductStock.Models
@@ -26,5 +27,7 @@ namespace ProductStock.Models
 
         [Required(ErrorMessage = "IdCategory is required")]
         public int IdCategory { get; set; }
+
+        public virtual List<OrderProduct> OrderProducts { get; set; }
     }
 }
