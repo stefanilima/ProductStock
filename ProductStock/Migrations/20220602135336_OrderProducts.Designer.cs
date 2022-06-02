@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProductStock.Data;
 
 namespace ProductStock.Migrations
 {
     [DbContext(typeof(ProductStockContext))]
-    partial class ProductStockContextModelSnapshot : ModelSnapshot
+    [Migration("20220602135336_OrderProducts")]
+    partial class OrderProducts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

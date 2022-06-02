@@ -20,6 +20,16 @@ namespace ProductStock.Data
                 .HasOne(product => product.Category)
                 .WithMany(category => category.Products)
                 .HasForeignKey(product => product.IdCategory);
+
+            builder.Entity<OrderProduct>()
+                .HasOne(orderProduct => orderProduct.Order)
+                .WithMany(order => order.OrderProducts)
+                .HasForeignKey(orderProduct => orderProduct.IdOrder);
+
+            builder.Entity<OrderProduct>()
+                .HasOne(orderProduct => orderProduct.Product)
+                .WithMany(product => product.OrderProducts)
+                .HasForeignKey(orderProduct => orderProduct.IdProduct);
         }
 
         public DbSet<Category> Categorys { get; set; }
